@@ -225,7 +225,7 @@ function days(month, year){
   console.log(newWord("cherry")) // ➞ "herry"
   console.log(newWord("plum")) // ➞ "lum"
   
-  
+
   // 15. Concatenating First and Last Character of a String
   // Create a function that takes a string and returns the concatenated first and last character.
   function firstLast(strInput){
@@ -239,3 +239,75 @@ function days(month, year){
   firstLast("shiva") //➞ "sa"
   firstLast("Salman") //➞ "Sn"
   firstLast("Adeyemi") //➞ "ai"
+
+  // 16. The Study of Wumbology
+// Create a function that flips M's to W's (all uppercase).
+function wumbo(input){
+    result = input.replaceAll("M", "W")
+    return result.toUpperCase()
+  }
+  //Sample below
+  console.log(wumbo("I LOVE MAKING CHALLENGES")) // ➞ "I LOVE WAKING CHALLENGES"
+  console.log(wumbo("MEET ME IN WARSAW")) // ➞ "WEET WE IN WARSAW"
+  console.log(wumbo("WUMBOLOGY")) // ➞ "WUWBOLOGY"
+  
+  
+  // 17. Reverse the Order of a String
+  // Create a function that takes a string as its argument and returns the string in reversed order.
+  function reverse(strInput){
+    result = strInput.split("").reverse().join("")
+    console.log(result)
+    return result
+  }
+    
+  //Sample below
+  reverse("Hello World") //➞ "dlroW olleH"
+  reverse("The quick brown fox.") // ➞ ".xof nworb kciuq ehT"
+  reverse("Edabit is really helpful!") // ➞ "!lufpleh yllaer si tibadE"
+
+  // 18. Check if String Ending Matches Second String
+// Create a function that takes two strings and returns true if the first string ends with the second string; otherwise return false.
+function checkEnding(str1, str2){
+    if (str1.endsWith(str2)){
+      return true
+    }
+    else{
+      return false
+    }
+  }
+  
+  //Examples
+  console.log(checkEnding("abc", "bc")) //➞ true
+  console.log(checkEnding("abc", "d")) //➞ false
+  console.log(checkEnding("samurai", "zi")) // ➞ false
+  console.log(checkEnding("feminine", "nine")) // ➞ true
+  console.log(checkEnding("convention", "tio")) //➞ false
+
+  // 19. Return the Middle Character(s) of a String
+// Create a function that takes a string and returns the middle character(s). If the word's length is odd, return the middle character. If the word's length is even, return the middle two characters.
+function getMiddle(strInput){
+    if (strInput.length % 2 === 0){
+      return strInput.charAt(strInput.length/2 -1) + strInput.charAt(strInput.length/2) 
+    }
+    else {
+      return strInput.charAt(strInput.length/2)
+    }
+  }
+  //Sample below
+  console.log(getMiddle("test"))// ➞ "es"
+  
+  console.log(getMiddle("testing")) //➞ "t"
+  
+  console.log(getMiddle("middle")) //➞ "dd"
+  
+  console.log(getMiddle("A")) //➞ "A"
+  
+  
+  // 20. Is the Word Singular or Plural? solved already!
+  // Create a function that takes in a word and determines whether or not it is plural. A plural word is one that ends in "s".
+  
+  // Sample below
+  // isPlural("changes") ➞ true
+  // isPlural("change") ➞ false
+  // isPlural("dudes") ➞ true
+  // isPlural("magic") ➞ false
