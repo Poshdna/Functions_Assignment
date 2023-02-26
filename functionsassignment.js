@@ -311,3 +311,158 @@ function getMiddle(strInput){
   // isPlural("change") ➞ false
   // isPlural("dudes") ➞ true
   // isPlural("magic") ➞ false
+
+
+// 21. Default Mood
+// Create a function that takes in a current mood and return a sentence in the following format: "Today, I am feeling {mood}". However, if no argument is passed, return "Today, I am feeling neutral".
+
+function moodToday(mood){
+    if (mood === undefined || mood === ""){
+      return `Today, I am feeling neutral`
+    }
+    else{
+    return `Today, I am feeling ${mood}`
+    }
+  }
+  // NB: USe the string interpolation to do this
+  // Sample below
+  console.log(moodToday("happy")) // ➞ "Today, I am feeling happy"
+  console.log(moodToday("sad")) // ➞ "Today, I am feeling sad"
+  console.log(moodToday()) // ➞ "Today, I am feeling neutral"
+  
+  
+  // 22. Case Insensitive Comparison
+  // Write a function that validates whether two strings are identical. Make it case insensitive.
+  function match(str1, str2){
+     if (str1.toLowerCase() === str2.toLowerCase()){
+       return true
+     }
+     else {
+       return false
+     }
+  }
+  // Sample below
+  console.log(match("hello", "hELLo")) // ➞ true
+  console.log(match("motive", "emotive")) // ➞ false
+  console.log(match("venom", "VENOM")) // ➞ true
+  console.log(match("mask", "mAskinG")) // ➞ false
+  
+  // 23. City School Creating IDS
+  // Many IDS (for emails or Google ID) are created using the person's name.
+  // Create a function that will return a four-character ID using the person's first name and last name.
+  function createID(firstName, lastName){
+    return firstName.toLowerCase().substring(0, 1)
+           + lastName.toUpperCase().substring(0, 1)
+           + lastName.toLowerCase().substring(1, 3)
+  }
+  // The first character will be the first letter of the first name but in lowercase. 
+  // The next three characters will be the first three characters of the last name, but the first letter will be capitalized and the other two will be in lower case.
+  
+  //Sample below
+  console.log(createID("mary", "lamb")) // ➞ "mLam"
+  console.log(createID("John", "SMITH")) // ➞ "jSmi"
+  console.log(createID("mary", "smith")) //➞ "mSmi"
+  
+  
+  // 24.  The last time we searched google with word and added spaces at the back of the Word
+  // Google did some magik there in by changing all the spaces to +
+  // Now your job is to write a function that does that magik google did the other days
+  // Function should take aparamter and thne returned a result that has all the space chnagesd to +
+  function google(input){
+    return `${input.replaceAll(" ", "+")}`
+  }
+  //sample below
+  console.log(google("Enjoying     ")) // ➞ "Enjoying+++++"
+  console.log(google("Zulfah  ")) //➞ "Zulfah++"
+  
+  
+  
+  // 25. Reverse and Capitalize
+  // Create a function that takes a string of lowercase characters and returns that string reversed and in upper case.
+  function reverseCapitalize(strInput){
+    let result = strInput.toUpperCase().split("").reverse().join("")
+    console.log(result)
+    return result
+  }
+  //Sample below
+  reverseCapitalize("abc") // ➞ "CBA"
+  reverseCapitalize("hellothere") //➞ "EREHTOLLEH"
+  reverseCapitalize("input") //➞ "TUPNI"
+  
+  // 26. Check if input variable is a number or not
+  // Write a function isValidNumber that checks if input variable is a
+  // number or not. The function should return “Variable is not a number” if its not and
+  // return  “Variable is a valid number”.
+  // NB: hint is read about the isNaN in the mdn docs
+  
+  function isValidNumber(input){
+    if (isNaN(input)){
+      return `${input} is not a number`
+    }
+    else {
+      return `${input} is a valid number`
+    }
+  }
+  //sample below
+  console.log(isValidNumber(11)) //"11 is a valid number"
+  console.log(isValidNumber("19")) //"19 is a valid number"
+  console.log(isValidNumber("xyz")) //"xyz is not a number"
+  console.log(isValidNumber("17.5")) //"17.5 is a valid number"
+  console.log(isValidNumber("21F")) //"21F is not a number" 
+  
+  // 27.  Verify the email address
+  // write a function to determine whether an email address is valid or not.
+  // NB: An email is valid if it contains "@" sign
+  function isEmailValid(email){
+    if (email.includes("@")){
+      return true
+    }
+    else {
+      return false
+    }
+  }
+  //sample below
+  console.log(isEmailValid("roshbon@gmail.com")) // ➞ true
+  console.log(isEmailValid("zaicongmail.com")) // ➞ false
+  
+  // 28. Truncate String
+  // Write a JavaScript function to extract a specified number of characters from a string starting from the first character
+   function truncate_string(input, specNumber){
+     return input.substring(0, specNumber)
+   }
+  //Sample below
+  console.log(truncate_string("Robin Singh",4))  //➞ Robi
+  console.log(truncate_string("Ali Akerele",2))  //➞ Al
+  
+  // 29. Repeat Data
+  // Write a JavaScript function to repeat a string a specified times. It takes 2 parameters
+  // The string and the number of repeatition
+  function repeat_string(input, numOfTimes){
+    return input.repeat(numOfTimes)
+  }
+  //sample below
+   console.log(repeat_string('Hello', 4)) //"Hello Hello Hello Hello"
+   console.log(repeat_string('Vote wisely', 2)) //"Vote wisely Vote wisely"
+  
+  
+  // 30. Hello; Hello World; World
+  // Write a function that takes an integer and:
+  // If the number is a multiple of 3, return "Hello".
+  // If the number is a multiple of 5, return "World".
+  // If the number is a multiple of both 3 and 5, return "Hello World".
+  function helloWorld(int){
+    if ((int%3 === 0) && (int%5 === 0)){
+      return `Hello World`
+    }
+    if (int%3 === 0){
+      return `Hello`
+    }
+    if (int%5 === 0){
+      return `World`
+    }
+    
+  }
+  //Sample below
+  console.log(helloWorld(3)) // ➞ "Hello"
+  console.log(helloWorld(5)) //➞ "World"
+  console.log(helloWorld(15)) // ➞ "Hello World"
